@@ -15,9 +15,9 @@ const port = process.env.PORT || 4000
 // middleware
 app.use(express.json())
 app.use(cors({
-  origin: "https://food-del-frontend-p976.onrender.com/", // your actual frontend domain
-  credentials: true
+  origin: '*'
 }))
+
 
 
 // db connection
