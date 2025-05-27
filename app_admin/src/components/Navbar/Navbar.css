@@ -1,0 +1,37 @@
+.navbar{
+    padding: 8px 4%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo{
+    width: 150px;
+    font-size: x-large;
+    font-weight: 600;
+}
+
+.navbar p{
+    font-size: 12px;
+    font-weight: 500;
+    margin-left: 2%;
+    margin-top: -1%;
+}
+
+.navbar .logo .first{
+    color: rgba(82, 107, 129);
+    font-style: italic;
+}
+
+.navbar .logo .second{
+    color: rgb(97, 18, 18);
+}
+
+.navbar .profile{
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    padding: 4px;
+    cursor: pointer;
+}

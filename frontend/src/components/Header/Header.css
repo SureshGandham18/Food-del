@@ -1,0 +1,65 @@
+.header{
+    height: 32vw;
+    margin: 30px auto;
+    background: url('/header.webp') no-repeat;
+    background-size: cover;
+    position: relative;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.header-contents{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vw;
+    margin: 0% 10%;
+    align-items: center;
+    text-align: center;
+    animation: fadeIn 3s;
+}
+
+.header-contents h2{
+    font-weight: 500;
+    color: white;
+    font-size: max(3.5vw, 15px);
+}
+
+.header-contents p{
+    font-family: 1vw;
+    color: white;
+}
+
+.header-contents a{
+    border: none;
+    color: rgb(82, 107, 129);
+    font-weight: 500;
+    padding: 0.8vw 2vw;
+    background-color: white;
+    font-size: max(1vw,13px);
+    border-radius: 50px;
+}
+
+@media (max-width:1050px){
+    .header{
+        height: 38vw;
+    }
+}
+
+@media (max-width:750px){
+    .header{
+        height: 35vw;
+    }
+    .header-contents h2{
+        font-size: 18px;
+    }
+    .header-contents p{
+        font-size: 10px;
+    }
+}
+
+@media (max-width:400px){
+    .header-contents p{
+        display: none;
+    }
+}
