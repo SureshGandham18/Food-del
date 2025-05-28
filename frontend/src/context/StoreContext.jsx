@@ -29,19 +29,27 @@ const StoreContexProvider = (props) => {
   };
 
   const getTotalCartAmount = () => {
-    let totalAmount = 0;
-    for (const item in cartItems) {
-      if (cartItems[item] > 0) {
-        let itemInfo = food_list.find((product) => product._id === item);
-        if (itemInfo) {
-          totalAmount += itemInfo.price * cartItems[item];
-        } else {
-          console.warn(`Item ID ${item} not found in food_list`);
-        }
+  let totalAmount = 0;
+
+  if (food_list.length === 0) return 0; // ✅ Optional safety check
+
+  for (const item in cartItems) {
+    if (cartItems[item] > 0) {
+      let itemInfo = food_list.find(
+        (product) => product._id.toString() === item.toString() // ✅ Fix for ObjectId mismatch
+      );
+
+      if (itemInfo) {
+        totalAmount += itemInfo.price * cartItems[item];
+      } else {
+        console.warn(`Item ID ${item} not found in food_list`);
       }
-    return totalAmount;
-  };
-}
+    }
+  }
+
+  return totalAmount; // ✅ Now correctly returns after loop finishes
+};
+
 
   const fetchFoodList = async()=>{
     const response = await axios.get(url+"/api/food/list")
